@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/03/2026 às 18:24
+-- Tempo de geração: 11/03/2026 às 18:36
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -75,10 +75,10 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `transaction`
+-- Estrutura para tabela `transactions`
 --
 
-CREATE TABLE `transaction` (
+CREATE TABLE `transactions` (
   `id` int(11) NOT NULL,
   `client` int(11) NOT NULL,
   `gateway` int(11) NOT NULL,
@@ -143,9 +143,9 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `transaction`
+-- Índices de tabela `transactions`
 --
-ALTER TABLE `transaction`
+ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -185,9 +185,9 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `transaction`
+-- AUTO_INCREMENT de tabela `transactions`
 --
-ALTER TABLE `transaction`
+ALTER TABLE `transactions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -210,7 +210,7 @@ ALTER TABLE `users`
 -- Restrições para tabelas `transaction_products`
 --
 ALTER TABLE `transaction_products`
-  ADD CONSTRAINT `fk_transaction` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_transaction` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
