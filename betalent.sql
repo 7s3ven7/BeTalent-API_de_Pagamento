@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/03/2026 às 19:37
+-- Tempo de geração: 11/03/2026 às 18:24
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -29,12 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
-  `name` int(255) NOT NULL,
-  `email` int(1) NOT NULL,
-  `fk_users` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'cliente1', 'Client1@gmail.com', '2026-03-11 14:51:13', '2026-03-11 14:51:13'),
+(2, 'client2', 'Client2@gmail.com', '2026-03-11 14:51:13', '2026-03-11 14:51:13');
 
 -- --------------------------------------------------------
 
@@ -76,11 +83,9 @@ CREATE TABLE `transaction` (
   `client` int(11) NOT NULL,
   `gateway` int(11) NOT NULL,
   `external_id` int(11) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
   `amount` int(11) NOT NULL,
   `card_last_numbers` int(16) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -123,8 +128,7 @@ CREATE TABLE `users` (
 -- Índices de tabela `clients`
 --
 ALTER TABLE `clients`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_users` (`fk_users`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `gateways`
@@ -142,8 +146,7 @@ ALTER TABLE `products`
 -- Índices de tabela `transaction`
 --
 ALTER TABLE `transaction`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_product` (`product_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `transaction_products`
@@ -167,7 +170,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `gateways`
@@ -202,18 +205,6 @@ ALTER TABLE `users`
 --
 -- Restrições para tabelas despejadas
 --
-
---
--- Restrições para tabelas `clients`
---
-ALTER TABLE `clients`
-  ADD CONSTRAINT `fk_users` FOREIGN KEY (`fk_users`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Restrições para tabelas `transaction`
---
-ALTER TABLE `transaction`
-  ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `transaction_products`
