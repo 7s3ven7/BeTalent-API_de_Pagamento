@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/03/2026 às 19:28
+-- Tempo de geração: 15/03/2026 às 19:36
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -57,6 +57,14 @@ CREATE TABLE `gateways` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `gateways`
+--
+
+INSERT INTO `gateways` (`id`, `name`, `is_active`, `priority`, `created_at`, `updated_at`) VALUES
+(1, 'gateway1', 1, 1, '2026-03-15 19:35:19', '2026-03-15 19:35:19'),
+(2, 'gateway2', 1, 0, '2026-03-15 19:35:19', '2026-03-15 19:35:19');
 
 -- --------------------------------------------------------
 
@@ -121,6 +129,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Despejando dados para a tabela `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'Admin@gmail.com', 'Admin', 'ADMIN', '2026-03-15 19:35:51', '2026-03-15 19:35:51');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -176,7 +191,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT de tabela `gateways`
 --
 ALTER TABLE `gateways`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `products`
@@ -200,7 +215,7 @@ ALTER TABLE `transaction_products`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas
