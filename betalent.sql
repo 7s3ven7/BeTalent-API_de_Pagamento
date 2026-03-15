@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/03/2026 às 17:32
+-- Tempo de geração: 15/03/2026 às 19:28
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -82,10 +82,10 @@ CREATE TABLE `transactions` (
   `id` int(11) NOT NULL,
   `client` int(11) NOT NULL,
   `gateway` int(11) NOT NULL,
-  `external_id` int(11) NOT NULL,
-  `status` int(1) NOT NULL,
-  `amount` int(11) NOT NULL,
-  `card_last_numbers` int(16) NOT NULL,
+  `external_id` varchar(64) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `amount` int(16) NOT NULL,
+  `card_last_numbers` varchar(20) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
