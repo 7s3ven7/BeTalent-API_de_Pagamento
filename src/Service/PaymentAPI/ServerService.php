@@ -69,7 +69,6 @@ class ServerService
             return false;
         }
 
-        var_dump($response);
         $this->response = json_decode($response, true);
 
         if (isset($this->response['error'])) {
