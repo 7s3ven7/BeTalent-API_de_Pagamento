@@ -1,5 +1,5 @@
-service:
-  
+services:
+
   nginx:
     image: nginx:alpine
     ports:
@@ -9,7 +9,7 @@ service:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
-  
+
   php:
     image: php:8.5.1-fpm
     volumes:
