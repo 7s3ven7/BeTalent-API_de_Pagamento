@@ -1,3 +1,10 @@
+# Requisitos
+
+- Linux Server
+  
+- Docker-compose
+- Git
+
 # Como Baixar
 
 <br>
@@ -79,6 +86,11 @@ mysql -u root -p BeTalent < betalent.sql
 
 # Dificuldades
 
+### Não Cumpridos
+
+- Detalhamento de Rotas
+- TDD
+
 ### Docker
 
 Nunca tinha usado docker antes então foi um pouco complicado usa-lo em um projeto tão 'complexo',
@@ -99,7 +111,6 @@ e na parte das transações fiquei preso por 2 dias, até terminar, por conta de
 por bastante tempo eu consegui cadatrar tudo corretamente, até onde testei.
 
 # Observações
-
 Não tinha usado até então nenhuma ORM e nem um validador dedicado, sempre criei minha próprias ferramentos como meio de aprendizado,
 então meu código não ficou bom no quesito de usabilidade da ORM (Eloquent) e do validador de dados (respect/validation), mas eu dei o meu melhor com a
 pesquisa que fiz. No final, o projeto inteiro foi um grande aprendizado onde apliquei diversas tecnologias que eu desconhecia, muito complicado, porem muito bom para minha melhora.
