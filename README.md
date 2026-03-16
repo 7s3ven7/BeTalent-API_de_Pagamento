@@ -4,31 +4,40 @@
 
 ## 1° Clonar repositório
 
-Inicie na sua maquina linux com o comando:
+Inicie na sua máquina linux com o comando:
 
-```git clone https://github.com/7s3ven7/BeTalent-API_de_Pagamento.git```
+```bash 
+git clone https://github.com/7s3ven7/BeTalent-API_de_Pagamento.git
+```
 
 Depois renomeie o diretório:
-
-```mv BeTalent-API_de_Pagamento php```
+```bash 
+mv BeTalent-API_de_Pagamento php
+```
 
 retire os arquivos de config:
 
-```cd php```
+```bash 
+cd php
+```
 
-```mv betalent.sql ../../```
+```bash 
+mv betalent.sql ../../
 
-```mv docker-compose.yml ../../```
+mv docker-compose.yml ../../
 
-```mv Dockerfile ../../```
+mv Dockerfile ../../
 
-```mv nginx.conf ../../```
+mv nginx.conf ../../
+```
 
 Retorne para o diretório base
 
-```cd ../../```
+```bash 
+cd ../../
 
-```ls```
+ls
+```
 
 Devera aparecer o diretório php e os arquivos antes movidos.
 
@@ -38,23 +47,31 @@ Devera aparecer o diretório php e os arquivos antes movidos.
 
 Agora inicie seu docker com o docker-compose
 
-```docker-compose up --build -d```
+```bash 
+docker-compose up --build -d
+```
 
 <br>
 
 ## 3° Banco de Dados
 
-Copie o betalent.sql para o containner db:
+Copie o betalent.sql para o container db:
 
-```docker cp betalent.sql server_db_1:./```
+```bash 
+docker cp betalent.sql server_db_1:./
+```
 
 Entre no bash do container db:
 
-```docker exec -it server_db_1 bash```
+```bash
+docker exec -it server_db_1 bash
+```
 
 use o betalent.sql para criar a base de dados:
 
-```mysql -u root -p BeTalent < betalent.sql```
+```bash
+mysql -u root -p BeTalent < betalent.sql
+```
 
 <br>
 
@@ -62,24 +79,24 @@ use o betalent.sql para criar a base de dados:
 
 # Dificuldades
 
-- Docker
+### Docker
 
 Nunca tinha usado docker antes então foi um pouco complicado usa-lo em um projeto tão 'complexo',
 quanto este, estou acostumado a testar tecnologias isoladas, então mesclar bibliotecas,
-banco de dadoss, nginx e php tudo ao mesmo tempo enquanto usava o docker como infraestruturo do projeto, me fez
+banco de dados, nginx e API tudo ao mesmo tempo enquanto usava o docker como infraestrutura do projeto, me fez
 sofrer um pouco.
 
-- Organização de Tempo
+### Organização de Tempo
 
-Comecei com o mais difícil sendo o docker, o qual não tinha usado até o momento, e fiquei 1 dia inteiro para conseguir
-criar meu ambiente, depois fiquei 4 dias na programação da api, e mais 1 dia no final para testar e organizar,
+Comecei com o mais difícil sendo o docker, o qual não tinha usado até o momento, e fiquei 1 dia para conseguir
+criar meu ambiente, depois fiquei 4 dias na programação da API, e 1 dia para testar e organizar,
 ainda não tenho certeza se esta tudo funcionando, porem fiz e testei o que consegui, no tempo que me foi dado, com as habilidades que tenho.
 
-- Interpretação do Problema
+### Interpretação do Problema
 
-Quando comecei a programar a API foi tranquilo, comecei com os CRUDs que seriam a parte mais facil, depois fiz o login e por fim as transações,
-e na parte das transações fiquei empacato por 2 dias, até terminar, por conta de não conseguir interpretar o que foi requerido, não entendi no inicio se a transiction
-é criada antes ou depois do cliente, se a transiction_productt era antes ou depois tambem, mas depois de bater por bastante tempo eu consegui cadatrar tudo corretamente, até onde testei.
+Quando comecei a programar a API foi tranquilo, comecei com os CRUDs que seriam a parte mais fácil, depois fiz o login e por fim as transações,
+e na parte das transações fiquei preso por 2 dias, até terminar, por conta de não conseguir interpretar o que foi requerido, mas depois de bater a cabeça 
+por bastante tempo eu consegui cadatrar tudo corretamente, até onde testei.
 
 # Observações
 
