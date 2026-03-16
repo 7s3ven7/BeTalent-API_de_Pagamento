@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/03/2026 às 19:36
+-- Tempo de geração: 16/03/2026 às 01:56
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -133,7 +133,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Admin@gmail.com', 'Admin', 'ADMIN', '2026-03-15 19:35:51', '2026-03-15 19:35:51');
+(1, 'Admin@gmail.com', '$2y$12$HlEJivJfSATZGNWDapOGO.amLr4osSaSSzJFO.U0vYOSBg4zaRGDe', 'ADMIN', '2026-03-15 19:35:51', '2026-03-15 19:35:51');
 
 --
 -- Índices para tabelas despejadas
